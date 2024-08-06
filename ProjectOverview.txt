@@ -1,0 +1,35 @@
+Project Overview:
+This project involves using terraform to create a multiple spotify playlist. Terraform will be used to automate the creation and management of these playlist.
+
+Pre-requisites :
+1) Terraform installed
+2) Docker installed
+3) Spotify account and Spotify Developer account( no need of premium account)
+4) Spotify provider of terraform
+5) VS code editor
+
+Steps:
+1) creating terraform code:
+    create a new directory for your code and create the main.tf file.
+
+2) Define Provider:
+    in main.tf file define provider 
+        provider "spotify" {
+            api_key = "?"
+        }
+
+3) Need API key :
+    i) to interact with spotify API, we need client ID and client Secret.
+    ii) go to spotify Developer account using spotify account and create an App. Add redirect url = http://localhost:27228/spotify_callback
+        and click on setting get the client id and client Secret
+    iii) create the .env file and add the client ID and secret:
+            SPOTIFY_CLIENT_ID=<>
+            SPOTIFY_CLIENT_SECRET=<>
+    iv) run the spotify auth app and get the API key
+        note: you should get the authorization successful
+    
+4) Continue creating the terraform code
+5) terraform init
+6) terraform plan
+7) terraform apply
+8) verify the playlist on spotify
